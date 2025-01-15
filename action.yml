@@ -1,9 +1,32 @@
+name: 'YouTube PR/Issue Link Commenter'
+description:
+  'Comments with a random YouTube video or shorts link on pull requests and
+  issues'
+author: 'Kosuke Okamoto'
+
+branding:
+  icon: 'video'
+  color: 'red'
+
+inputs:
+  youtube_urls:
+    description: 'Comma-separated list of YouTube URLs'
+    required: true
+  github_token:
+    description: 'GitHub token for creating comments'
+    required: true
+    default: ${{ github.token }}
+
 outputs:
   selected_url:
-    description: 'Selected YouTube URL'
+    description: 'The randomly selected YouTube URL'
   video_id:
     description: 'Video ID of the selected URL'
   comment_type:
     description: 'Type of comment (pull_request or issue)'
   number:
     description: 'Issue or PR number'
+
+runs:
+  using: node20
+  main: dist/index.js
