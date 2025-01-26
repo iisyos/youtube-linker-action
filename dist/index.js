@@ -31314,10 +31314,9 @@ async function run() {
             coreExports.setFailed('Could not get issue or pull request number from context');
             return;
         }
-        const youtubeUrls = coreExports.getInput('youtube_urls', { required: true })
-            .split(',')
-            .map((url) => url.trim())
-            .filter((url) => url.length > 0);
+        const youtubeUrls = coreExports.getMultilineInput('youtube_urls', {
+            required: true
+        });
         if (youtubeUrls.length === 0) {
             coreExports.setFailed('No YouTube URLs provided');
             return;

@@ -2,16 +2,15 @@
 
 <img src="./icon.png" width="200" height="200">
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-YouTube%20Linker%20Action-blue?logo=github)]()
 [![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
-![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
 [![Check dist/](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml)
 [![CodeQL](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml)
 [![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
 
 ## What is this?
 
-This GitHub Action automatically adds a random YouTube video or shorts link as a comment when a pull request or issue is created.
+This GitHub Action automatically adds a random YouTube video or shorts link as a
+comment when a pull request or issue is created.
 
 The comment format like below:
 
@@ -22,11 +21,10 @@ The comment format like below:
 
 ## Inputs
 
-| Input                      | Required | Default                    | Info                                           |
-|----------------------------|----------|----------------------------|------------------------------------------------|
-| youtube_urls                    | Yes      | N/A                        | List of YouTube URLs (both regular videos and shorts                                  |
-| github_token                | Yes       | N/A | GitHub token for creating comments.                             |
-
+| Input        | Required | Default | Info                                                 |
+| ------------ | -------- | ------- | ---------------------------------------------------- |
+| youtube_urls | Yes      | N/A     | List of YouTube URLs (both regular videos and shorts |
+| github_token | Yes      | N/A     | GitHub token for creating comments.                  |
 
 ## Usage
 
@@ -54,10 +52,14 @@ jobs:
 
 ## Motivation
 
-Dependabot PRs, while incredibly useful, can feel a bit mechanical and impersonal. This action aims to add a touch of personality and fun to the automated update process.
+Dependabot PRs, while incredibly useful, can feel a bit mechanical and
+impersonal. This action aims to add a touch of personality and fun to the
+automated update process.
 
-As a fan of Japanese idol music, particularly FRUITS ZIPPER, I was inspired by their song "NewKawaii" which includes the lyrics  `Let's update now` This perfectly combines the technical nature of dependency updates with a cute, encouraging message.
-
+As a fan of Japanese idol music, particularly FRUITS ZIPPER, I was inspired by
+their song "NewKawaii" which includes the lyrics `Let's update now` This
+perfectly combines the technical nature of dependency updates with a cute,
+encouraging message.
 
 Example usage for Dependabot PRs:
 
