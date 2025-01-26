@@ -29,7 +29,8 @@ The comment format like below:
 
 ## Permissions
 
-This action requires the `pull-requests: write` permission to add comments to pull requests.
+This action requires the `pull-requests: write` permission to add comments to
+pull requests.
 
 ## Usage
 
@@ -96,7 +97,6 @@ jobs:
             https://www.youtube.com/shorts/r7aMeLA4JDg
             https://www.youtube.com/shorts/ifa_BSKB_Kg
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
 ```
 
 ## License
