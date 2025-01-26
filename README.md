@@ -27,6 +27,10 @@ The comment format like below:
 | youtube_urls | Yes      | N/A     | List of YouTube URLs (both regular videos and shorts |
 | github_token | Yes      | N/A     | GitHub token for creating comments.                  |
 
+## Permissions
+
+This action requires the `pull-requests: write` permission to add comments to pull requests.
+
 ## Usage
 
 Basic usage example:
@@ -39,11 +43,14 @@ on:
   issues:
     types: [opened]
 
+permissions:
+  pull-requests: write
+
 jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: iisyos/youtube-linker-action
+      - uses: iisyos/youtube-linker-action@main
         with:
           youtube_urls: |
             https://www.youtube.com/watch?v=hoge
@@ -70,12 +77,15 @@ on:
   pull_request:
     types: [opened]
 
+permissions:
+  pull-requests: write
+
 jobs:
   comment:
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }} # Only run for dependabot PRs
+    if: ${{ github.actor == 'dependabot[bot]' }}
     steps:
-      - uses: iisyos/youtube-linker-action
+      - uses: iisyos/youtube-linker-action@main
         with:
           youtube_urls: |
             https://www.youtube.com/shorts/ThyyFk4tGa0
@@ -86,6 +96,7 @@ jobs:
             https://www.youtube.com/shorts/r7aMeLA4JDg
             https://www.youtube.com/shorts/ifa_BSKB_Kg
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
 ```
 
 ## License
