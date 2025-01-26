@@ -2,6 +2,7 @@
 
 <img src="./icon.png" width="200" height="200">
 
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-YouTube%20Linker%20Action-blue?logo=github)](https://github.com/marketplace/actions/youtube-pr-issue-link-commenter)
 [![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
 [![Check dist/](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml)
 [![CodeQL](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml)
