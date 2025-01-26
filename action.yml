@@ -10,7 +10,7 @@ branding:
 
 inputs:
   youtube_urls:
-    description: 'Comma-separated list of YouTube URLs'
+    description: 'list of YouTube URLs'
     required: true
   github_token:
     description: 'GitHub token for creating comments'

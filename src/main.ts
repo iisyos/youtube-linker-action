@@ -24,11 +24,9 @@ export async function run(): Promise<void> {
       return
     }
 
-    const youtubeUrls: string[] = core
-      .getInput('youtube_urls', { required: true })
-      .split(',')
-      .map((url) => url.trim())
-      .filter((url) => url.length > 0)
+    const youtubeUrls = core.getMultilineInput('youtube_urls', {
+      required: true
+    })
 
     if (youtubeUrls.length === 0) {
       core.setFailed('No YouTube URLs provided')

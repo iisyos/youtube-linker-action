@@ -1,29 +1,32 @@
 # YouTube Linker Action
 
-A GitHub Action that automatically adds a random YouTube video or shorts link as a comment when a pull request or issue is created.
+<img src="./icon.png" width="200" height="200">
+
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-YouTube%20Linker%20Action-blue?logo=github)]()
+[![GitHub Super-Linter](https://github.com/actions/typescript-action/actions/workflows/linter.yml/badge.svg)](https://github.com/super-linter/super-linter)
+![CI](https://github.com/actions/typescript-action/actions/workflows/ci.yml/badge.svg)
+[![Check dist/](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/check-dist.yml)
+[![CodeQL](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/actions/typescript-action/actions/workflows/codeql-analysis.yml)
+[![Coverage](./badges/coverage.svg)](./badges/coverage.svg)
+
+## What is this?
+
+This GitHub Action automatically adds a random YouTube video or shorts link as a comment when a pull request or issue is created.
+
+The comment format like below:
+
+```
+[![](https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg)](https://www.youtube.com/watch?v=jNQXAC9IVRw)
+<--------------thumbnails-----------------------> | <--------------video link------------------->
+```
 
 ## Inputs
 
-### `youtube_urls`
-**Required** Comma-separated list of YouTube URLs (both regular videos and shorts).
+| Input                      | Required | Default                    | Info                                           |
+|----------------------------|----------|----------------------------|------------------------------------------------|
+| youtube_urls                    | Yes      | N/A                        | List of YouTube URLs (both regular videos and shorts                                  |
+| github_token                | Yes       | N/A | GitHub token for creating comments.                             |
 
-### `github_token`
-**Required** GitHub token for creating comments.
-Default: `${{ github.token }}`
-
-## Outputs
-
-### `selected_url`
-The randomly selected YouTube URL.
-
-### `video_id`
-The ID of the selected video.
-
-### `comment_type`
-Type of the comment (pull_request or issue).
-
-### `number`
-The issue or pull request number.
 
 ## Usage
 
@@ -41,19 +44,46 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - uses: your-username/youtube-linker-action@v1
+      - uses: iisyos/youtube-linker-action
         with:
           youtube_urls: |
-            https://www.youtube.com/watch?v=abc123,
-            https://www.youtube.com/shorts/xyz789
+            https://www.youtube.com/watch?v=hoge
+            https://www.youtube.com/shorts/foo
           github_token: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-## Example Output
+## Motivation
 
-When a pull request or issue is created, the action will add a comment like this:
+Dependabot PRs, while incredibly useful, can feel a bit mechanical and impersonal. This action aims to add a touch of personality and fun to the automated update process.
 
-[![](https://img.youtube.com/vi/jNQXAC9IVRw/0.jpg)](https://www.youtube.com/watch?v=jNQXAC9IVRw)
+As a fan of Japanese idol music, particularly FRUITS ZIPPER, I was inspired by their song "NewKawaii" which includes the lyrics  `Let's update now` This perfectly combines the technical nature of dependency updates with a cute, encouraging message.
+
+
+Example usage for Dependabot PRs:
+
+```yaml
+name: Add YouTube Comment
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    if: ${{ github.actor == 'dependabot[bot]' }} # Only run for dependabot PRs
+    steps:
+      - uses: iisyos/youtube-linker-action
+        with:
+          youtube_urls: |
+            https://www.youtube.com/shorts/ThyyFk4tGa0
+            https://www.youtube.com/shorts/T6RFDdT4viQ
+            https://www.youtube.com/shorts/WUfHauv9cgo
+            https://www.youtube.com/shorts/qJMmVLXw1ak
+            https://www.youtube.com/shorts/Yc4hWFuiOt4
+            https://www.youtube.com/shorts/r7aMeLA4JDg
+            https://www.youtube.com/shorts/ifa_BSKB_Kg
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+```
 
 ## License
 
