@@ -1,8 +1,8 @@
-name: 'YouTube PR/Issue Link Commenter'
+name: 'YouTube Linker Action'
 description:
   'Comments with a random YouTube video or shorts link on pull requests and
   issues'
-author: 'Kosuke Okamoto'
+author: 'okamos102'
 
 branding:
   icon: 'video'
